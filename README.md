@@ -15,7 +15,11 @@ The Flickr8k image data set can be obtained from https://github.com/jbrownlee/Da
 The encoder learns the compressed encoding features using Pretrained CNN architecture RESTNET and subsequently feed into a RNN / LSTM network.
 The RNN/LSTM network uses sequence of words as input and output.
 
-Encoder extracts image features using the modified resnet-152 pretrained model and feed into the decoder. The image needs to be resized and normalized to 224x224 as per the input of the resnet-152. Next, the caption in the data set was cleaned by removing punctuation and lower-case the text. This is to ensure the word embedding only embed the text and ignore the variation of capital and lowercase. A vocab size of 3421 was built on words appears more than 3 times in the caption. The dataset was split into train and testing data were split into ration of 95:5. The word is vectorized into one-hot encoded words.
+![image](https://user-images.githubusercontent.com/67460572/94655544-55a3a180-0331-11eb-8f86-c2c5d13ca8e2.png)
+
+Encoder extracts image features using the modified resnet-152 pretrained model and feed into the decoder. The image needs to be resized and normalized to 224x224 as per the input of the resnet-152. 
+
+Next, the caption in the data set was cleaned by removing punctuation and lower-case the text. This is to ensure the word embedding only embed the text and ignore the variation of capital and lowercase. A vocab size of 3421 was built on words appears more than 3 times in the caption. The dataset was split into train and testing data were split into ration of 95:5. The word is vectorized into one-hot encoded words.
 
 The decoder then uses the one hot representation of the caption and the features vector as the input to train the model. The loss of RNN and LSTM decreased on every epoch. This is because the feed-backwards network in both networks are learning from the gradient descent backpropagation.
 
@@ -26,7 +30,9 @@ The quality of the generated caption is evaluated through BLEU score (reference:
 
 ![RNNLSTM loss](https://user-images.githubusercontent.com/67460572/94655420-22f9a900-0331-11eb-802f-914d66d21e03.PNG)
 
-The loss in RNN & LSTM drop with epochs, indicating the network is learning
+The loss in RNN & LSTM drop with epochs, indicating the network is learning. The loss of RNN and LSTM has roughly the same pattern, both drop drastically from 8 to 3 from after first epoch finally reached around 2.3 after 5 epochs. As expected, the BLEU score is terrible before training the model. The output is determined by random initialization of the weight in the neural network.
+
+Evaluating the performance while training, RNN BLEU scores are in the range of 0.41-0.57 while LSTM are in the range of 0.43-0.67. For the second image, RNN scores ranging from 0.41-0.56 while LSTM ranging from 0.39 – 0.73. This suggest that LSTM has a higher BLEU scores than RNN.
 
 ![caption generated per epoch](https://user-images.githubusercontent.com/67460572/94650849-0ad25b80-032a-11eb-8811-4de6c0afbb8f.PNG)
 
