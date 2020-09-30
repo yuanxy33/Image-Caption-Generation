@@ -2,8 +2,11 @@
 
 <h3>Background</h3>
 Given a image and five reference caption, an encoder-decoder architecture can be used to generate caption of the given image.
+
 The figure below shows an image with the given reference text
-![Image1](https://user-images.githubusercontent.com/67460572/94650710-ce066480-0329-11eb-89c4-5005efa086cc.PNG)
+
+![Image1](https://user-images.githubusercontent.com/67460572/94655314-f5146480-0330-11eb-8626-10f3b7c66bb5.PNG)
+
 
 <h3>Data Set</h3>
 The Flickr8k image data set can be obtained from https://github.com/jbrownlee/Datasets/releases/tag/Flickr8k
