@@ -22,10 +22,9 @@ The decoder then uses the one hot representation of the caption and the features
 The quality of the generated caption is evaluated through BLEU score (reference: https://machinelearningmastery.com/calculate-bleu-score-for-text-python/#:~:text=Crash%2DCourse%20Now-,Bilingual%20Evaluation%20Understudy%20Score,in%20a%20score%20of%200.0.)
 
 
-
-
 <h2>Result</h2>
-![RNNLSTM loss](https://user-images.githubusercontent.com/67460572/94650435-47ea1e00-0329-11eb-9d7f-31e01f455640.PNG)
+
+![RNNLSTM loss](https://user-images.githubusercontent.com/67460572/94655420-22f9a900-0331-11eb-802f-914d66d21e03.PNG)
 
 The loss in RNN & LSTM drop with epochs, indicating the network is learning
 
